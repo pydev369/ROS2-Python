@@ -140,8 +140,56 @@ FLASK_APP=dashboard.py flask run
 
 10. Open a web browser and go to http://localhost:5000/ to view the robot dashboard.
 
+
 ## Step 3: Creating a requirements.txt file
 
 1. Create a new file in the project directory called "requirements.txt".
 
-2
+2. Add the following packages to the "requirements.txt" file:
+
+```
+Flask
+rclpy
+geometry_msgs
+```
+
+3. Save the file.
+
+## Step 4: Docker Containerization
+
+1. Create a new file in the project directory called "Dockerfile".
+
+2. Add the following code to the "Dockerfile" to set up the Docker image:
+
+```
+FROM ros:foxy
+
+WORKDIR /app
+
+COPY ./robot_ws /app/robot_ws
+COPY ./dashboard.py /app/dashboard.py
+COPY ./templates /app/templates
+COPY ./requirements.txt /app/requirements.txt
+
+RUN apt-get update && \
+    apt-get install -y python3-pip && \
+    pip3 install -r requirements.txt
+
+CMD ["bash"]
+```
+
+3. Build the Docker image using the following command:
+
+```
+docker build -t <image_name> .
+```
+
+4. Run the Docker container using the following command:
+
+```
+docker run -it -p 5000:5000 <image_name>
+```
+
+5. Open a web browser and go to http://localhost:5000/ to view the robot dashboard.
+
+That's it! You now have a fully containerized ROS2 robot movement project with a Flask dashboard that can be run in a Docker container.
