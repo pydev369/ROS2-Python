@@ -1,4 +1,4 @@
- A basic steps to create TurtleBot3 project using ROS2 and Python:
+The basic steps to create TurtleBot3 project using ROS2 and Python:
 
 ## Step 1: Install TurtleBot3 and ROS2
 
