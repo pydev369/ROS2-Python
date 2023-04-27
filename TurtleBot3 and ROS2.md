@@ -1,4 +1,4 @@
-Sure! Here are the steps to create a basic TurtleBot3 project using ROS2 and Python:
+ A basic steps to create TurtleBot3 project using ROS2 and Python:
 
 ## Step 1: Install TurtleBot3 and ROS2
 
@@ -102,12 +102,3 @@ ros2 run turtlebot3_controller turtlebot3_controller.py
 
 The TurtleBot3 should start moving forward and turning.
 
-## Step 6: Create a README
-
-1. Create a new file in the root directory of your project called "README.md".
-
-2. Add a brief description of your project, including the purpose and how to run the code.
-
-3. Add any necessary instructions for setting up the environment, installing dependencies, and running the project.
-
-Congratulations! You have created a basic TurtleBot3 project using ROS2 and Python. You can modify the Python script to control the movement of the robot, and add additional nodes and topics to create more complex behaviors.
